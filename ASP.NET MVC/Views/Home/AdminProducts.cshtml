@@ -1,0 +1,25 @@
+﻿@model List<ASP.NET_MVC.Models.Product>
+@{
+    ViewBag.Title = "AdminProducts";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="width:100%;margin-bottom:2rem; background-color:lightgreen">
+    <p style="font-family:'Lucida Bright';font-weight:bold;padding-left:1rem;">
+        <strong>@Model.Count</strong> adet ürün listelendi.
+    </p>
+</div>
+
+@foreach (var product in @Model)
+{
+    <div class="pr-box" style="display:inline-block;width:30%;height:100%;margin:0 .6rem;">
+        <img src="@product.UrunResim" alt="" style="width: 100%;height:70%">
+        <h3>@product.UrunAdi</h3><hr>
+        <p>@product.UrunAciklama</p>
+        <h2>@product.UrunFiyat$</h2>
+        <a href="/Home/ProductList/@product.UrunId" class="btn-details">İncele</a>
+    </div>
+}
+    
+
+

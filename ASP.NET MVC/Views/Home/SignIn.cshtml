@@ -1,0 +1,23 @@
+﻿
+
+@using (Html.BeginForm("SignIn", "Home", FormMethod.Post))
+{
+    <div class="signin-container">
+
+        <form action="" id="contact-form">
+            <div class="signin-user">
+                <img src="/template/img/user.png" alt="" id="signin-user-img">
+            </div>
+            <div class="signin-form-input">
+                @Html.TextBox("name_surname", null, new { placeholder = "Ad Soyad" })<hr class="input-hr">
+                @Html.TextBox("mail", null, new { placeholder = "Mail Adres" })<hr class="input-hr">
+                @Html.Password("password", null, new { placeholder = "Password" })<hr class="input-hr">
+                @Html.Password("password_repeat", null, new { placeholder = "Password Repeat" })<hr class="input-hr">
+                <button class="btn btn_send" type="submit">
+                    Sign In
+                </button>
+            </div>
+        </form>
+    </div>
+}
+

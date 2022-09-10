@@ -1,0 +1,21 @@
+﻿@model List<ASP.NET_MVC.Models.User>
+@{
+    ViewBag.Title = "AdminUsers";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="width:100%;margin-bottom:2rem; background-color:lightgreen">
+    <p style="font-family:'Lucida Bright';font-weight:bold;padding-left:1rem;">
+        <strong>@Model.Count</strong> adet kullanıcı listelendi.
+    </p>
+</div>
+
+@foreach (var user in @Model)
+{
+    <div class="pr-box" style="display:block;width:90%;margin:.6rem auto; border: 1px solid; border-radius: 5px;padding: 3px;background-color: rgb(222, 243, 227);">
+        <h3 style="display:inline-block; width: 42%;">@user.UserAdi</h3>
+        <h3 style="display:inline-block; width: 42%;"> @user.UserEmail</h3>
+        <a href="" class="btn-details" style="display:inline-block;width: 15%;background-color: crimson;text-align: center;">Sil</a>
+    </div>
+}
+

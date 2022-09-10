@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("LogIn", "Home", FormMethod.Post))
+{
+    <div class="login-container">
+
+        <form action="" id="contact-form">
+            <div class="login-user">
+                <img src="/template/img/user.png" alt="" id="login-user-img">
+            </div>
+            <div class="login-form-input">
+                @Html.TextBox("mail", null, new { placeholder = "Mail Adres" })<hr class="input-hr">
+                @Html.Password("password", null, new { placeholder = "Password" })<hr class="input-hr">
+                <h4 style="color:red;">@ViewBag.Mesaj</h4>
+                <button class="btn btn_send" type="submit">
+                    Log In
+                </button>
+            </div>
+        </form>
+    </div>
+}
+

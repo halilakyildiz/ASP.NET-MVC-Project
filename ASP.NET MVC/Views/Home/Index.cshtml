@@ -1,0 +1,61 @@
+﻿
+
+<section>
+    <div class="index-container">
+        <div id="slider-container">
+            <div class="index-slider">
+                <img src="/template/img/bg0.png" alt="" id="slider-photo">
+                <img src="/template/img/bg1.png" alt="" id="slider-photo">
+                <img src="/template/img/bg2.png" alt="" id="slider-photo">
+                <img src="/template/img/bg3.png" alt="" id="slider-photo">
+                <img src="/template/img/bg4.png" alt="" id="slider-photo">
+            </div>
+        </div>
+        <div id="information">
+            <img src="/template/img/orders_bg.jpg" alt="">
+            <div class="information-cover">
+                <h2>Products</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis impedit harum ex? Ex quidem sint mollitia repellat rerum excepturi quia id? Dolorem aperiam quis, veniam est impedit eos perferendis a.</p>
+            </div>
+            <div id="products-container">
+
+                <div class="arrow arrow-left">
+                    <img src="/template/img/left-arrow.png" alt="" id="left-arr">
+                </div>
+                <div class="arrow arrow-right">
+                    <img src="/template/img/right-arrow.png" alt="" id="right-arr">
+                </div>
+                <div class="products-slider">
+                    <input type="text" id="pr-count" value="@ViewBag.products.Count" style="overflow:hidden;"/>
+                    @foreach (var product in @ViewBag.products)
+                    {
+                        <div class="product-box">
+                            <div class="products">
+                                <div class="products-img">
+                                    <img src="@product.UrunResim" alt="">
+                                </div>
+                                <div class="products-info">
+                                    <h4>@product.UrunAdi</h4>
+                                    <p>@product.UrunAciklama</p>
+                                    <h3>@product.UrunFiyat</h3>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+

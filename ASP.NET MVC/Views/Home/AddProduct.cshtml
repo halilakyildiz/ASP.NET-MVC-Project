@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("AddProduct", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="login-container" style="width: 50%;height: 20rem;padding: 1rem;">
+
+        <form action="" id="add-product">
+
+            <div class="photo-input" style="width: 30%; height:80%; display: inline-block;">
+                <img id="pr-img" src="/template/img/unknown.png" alt="" style="width: 100%; height:100%">
+                <input type="file" name="file" id="file" style="width: 100%;" onchange="onFileSelected(event)" />
+            </div>
+            <div class="login-form-input" style="display: inline-block; width: 70%; float: right;">
+
+                @Html.TextBox("urunAd", null, new { placeholder = "Ürün adı" })<hr class="input-hr">
+                @Html.TextBox("urunBilgi", null, new { placeholder = "Ürün bilgi" })<hr class="input-hr">
+                @Html.TextBox("urunFiyat", null, new { placeholder = "Ürün fiyatı" })<hr class="input-hr">
+                <button class="btn" type="submit">
+                    Ekle
+                </button>
+            </div>
+
+        </form>
+    </div>
+}
+

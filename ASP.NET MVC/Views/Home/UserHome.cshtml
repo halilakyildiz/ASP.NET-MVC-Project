@@ -1,0 +1,38 @@
+﻿@model List<ASP.NET_MVC.Models.User>
+@{
+    ViewBag.Title = "UserHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserHome</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/template/css/style.css">
+</head>
+<body>
+ 
+
+    <section style="margin-top: 2rem;">
+        <div class="index-container">
+            <h1 style="width:100%;background-color:lightgrey;">
+                Hoşgeldiniz
+                <strong>@Model.Where(i => i.UserEmail == HttpContext.Current.User.Identity.Name).ToList()[0].UserAdi</strong>
+            </h1>
+
+            <div id="slider-container" style="width:20%; background-color: #2e2e2b;">
+                Müşteri sayfası
+            </div>
+            <div id="information" style="width: 80%; overflow: scroll;">
+                Bilgiler
+            </div>
+        </div>
+    </section>
+
+    <script src="/template/scriptAdmin.js"></script>
+</body>
+</html>
+
